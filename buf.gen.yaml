@@ -1,0 +1,14 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/johanbrandhorst/simple-grpc/gen
+plugins:
+  - remote: buf.build/protocolbuffers/plugins/go:v1.28.0-1
+    out: gen
+    opt:
+      - paths=source_relative
+  - remote: buf.build/grpc/plugins/go:v1.1.0-1
+    out: gen
+    opt:
+      - paths=source_relative
